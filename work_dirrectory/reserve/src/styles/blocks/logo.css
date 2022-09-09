@@ -1,0 +1,15 @@
+.logo {
+    font-family: 'Molle', cursive;
+    /* font-family: 'Dancing Script', cursive; */
+
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.logo_color_blue {
+    color: var(--blue);
+}
+
+.logo_color_grey {
+    color: #ccc;
+}

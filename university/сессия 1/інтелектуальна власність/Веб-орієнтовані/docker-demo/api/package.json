@@ -1,0 +1,16 @@
+{
+    "name": "docker_web_app",
+    "version": "1.0.0",
+    "description": "node.js on docker",
+    "author": "first last <sashalischinskiy72@gmail.com>",
+    "main": "src/server.js",
+    "scripts": {
+        "start": "node src/server.js",
+        "dev": "nodemon --legacy-watch src/server.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "mongoose": "^6.0.7",
+        "nodemon": "^2.0.15"
+    }
+}

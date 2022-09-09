@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <>
+    <style>
+      .show {
+        display: initial;
+      }
+
+      /* video {
+        display: none;
+      } */
+    </style>
+
+    <p>kskldjf sadlkffjlasdjf sadfklfjsld</p>
+
+    <input type="text">
+
+    <script>
+      // if(navigator.permissions.query({ name: 'clipboard-read' })) {
+      //   console.log(navigator.permissions.query({ name: 'clipboard-write' }))
+      // }
+      // navigator.permissions.query({ name: 'clipboard-read' });
+      // navigator.permissions.query({ name: 'clipboard-write' });
+      console.log(document.querySelector("input"))
+        const input = document.querySelector("input");
+        input.addEventListener("change",  function (e)  {
+          navigator.clipboard.writeText(this.value);
+          console.log(console.log());
+          
+      })
+
+      addEventListener('copy', event => {
+ 
+          navigator.clipboard.writeText(`${window.getSelection()} https://www.google.com`);
+
+      
+      });
+
+   
+    </script>
+  </body>
+</html>

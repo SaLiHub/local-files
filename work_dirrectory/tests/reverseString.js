@@ -1,0 +1,16 @@
+var reverseString = function(s) {
+    let l = 0;
+    let r = s.length - 1;
+    while(l < r) {
+        const t = s[l];
+        s[l] = s[r];
+        s[r] = t;
+        l++;
+        r--;
+    }
+};
+const string = "string";
+reverseString(string);
+console.log(string)
+
+string.[1]

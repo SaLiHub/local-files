@@ -1,0 +1,37 @@
+var solution = function(isBadVersion) {
+    /**
+     * @param {integer} n Total versions
+     * @return {integer} The first bad version
+     */
+    return function(n) {
+        let left = 1;
+        let right = n;
+        let mid;
+        while(right >= left) {
+            mid = Math.floor((left + right) / 2);
+            if(isBadVersion(mid) && !isBadVersion(mid-1)) {
+                return mid
+            } else if (isBadVersion(mid)){
+                right = mid-1;
+            } else {
+                left = mid+1;
+            }
+        }
+        
+    };
+};
+
+
+var searchInsert = function(nums, target, left = 0, right = nums.length - 1) {
+    let mid = left + Math.floor((right - left) / 2);
+    if(nums[mid] === target) return mid;
+    if(left > right) return left;
+    if(nums[mid] > target) {
+        right = mid - 1;
+    } else {
+        left = mid + 1;
+    }
+    return searchInsert(nums, target, left , right);
+};
+
+// return index of the element, or index where the elements is supposed to be.

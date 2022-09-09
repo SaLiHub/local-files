@@ -1,0 +1,35 @@
+version: '3'
+services:
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: ./Dockerfile.prod
+    container_name: realworld-docker-frontend
+    command: npm run start
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    environment: 
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - './frontend:/usr/src/app'
+      - '/app/node_modules'
+
+  api:
+    build: ./api
+    command: npm run start
+    ports:
+      - "80:8080"
+    environment:
+      - PORT=8080
+      - HOST=http://localhost
+      - MONGODB_URL=mongodb://api_db:27017/api
+    depends_on:
+      - api_db
+  
+  api_db:
+    image: mongo:latest
+    volumes:
+      - ./mongodb_api:/data/db
